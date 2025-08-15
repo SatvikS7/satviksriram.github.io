@@ -7,89 +7,153 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="/images/pantsdotexe.png" class ="logo">
-            <ul>
-                <li><a href='#'>Home</a></li>
-                <li><a href='#'>About</a></li>
-                <li><a href='#'>Services</a></li>
-                <li><a href='#'>Portfolio</a></li>
-                <li><a href='#'>Contact</a></li>
-            </ul>
-        </nav>
-        <div class="header-text">
-            <p>Fullstack Software Engineer</p>
-            <h1><span>"Introduction </span><br> here"</h1>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1>Satvik Sriram</h1>
+                <ul>
+                    <li><a href='#home'>Home</a></li>
+                    <li><a href='#projects'>Projects</a></li>
+                    <li><a href='#personal-projects'>Personal Projects</a></li>
+                    <li><a href='#'>CV</a></li>
+
+                </ul>
+            </nav>
         </div>
     </div>
-</div>
 
+    <div class="about-container">
+        <div class="img-container">
+            <img src="./media/self_photo.jpg" alt="Satvik Sriram">
+        </div>
+        <div class="text-container">
+            <h1>About Me</h1>
+            <p>Hey!</p>
+            <p>My name is Satvik Sriram and I am a recent Computer Science graduate from the University of California, San Diego. I love to pick up new skills when I can, CS related or not, but right now applying machine learning models to the real world has taken up my time. Check out the rest of my website to get a better idea of who I am.</p>
+        </div>
+    </div>
 
-<!-- -------------about---------- -->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="images/monkayman.png" alt="">
+    <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="projects">Projects</button>
+            <button class="tab-btn" data-tab="personal-projects">Personal Projects</button>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="projects">
+                <div class="grid-container">
+                    <a href="https://github.com/SatvikS7/Pokemon-TCG-Price-Scanner" target="_blank" class="grid-item">
+                        <img src="./media/pokeprice.png" alt="Pokémon Card Price Scanner">
+                        <h3 class="description-text">PokéPrice</h3>
+                        <p class="description-text">Scan and identify Pokémon cards using machine learning.</p>
+                    </a>
+                    <a href="https://github.com/SatvikS7/tfteams" target="_blank" class="grid-item">
+                        <img src="./media/tfteams.png" alt="TFTeams">
+                        <h3 class="description-text">TFTeams</h3>
+                        <p class="description-text">A stat retrieval web app for TeamFight Tactics players.</p>
+                    </a>
+                    <div class="grid-item">
+                        <video muted playsinline controls>
+                            <source src="./media/upstairs_demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <h3 class="description-text">UPSTAIRS</h3>
+                        <p class="description-text">Generates virtual users with particular keywords or interests, simulates those users crawling through websites and clicking links of particular interests, and uses natural language processing to generate a keyword tree to track a users path through websites</p>
+                    </div>
+                    <a href="https://github.com/satviksriram/3d-camera-system" target="_blank" class="grid-item">
+                        <img src="./media/3d-camera.jpg" alt="3D Camera System">
+                        <h3 class="description-text">3D Camera System</h3>
+                    </a>
+                    <a href="https://github.com/satviksriram/3d-camera-system" target="_blank" class="grid-item">
+                        <img src="./media/3d-camera.jpg" alt="3D Camera System">
+                        <h3 class="description-text">3D Camera System</h3>
+                    </a>
+                    <a href="https://github.com/satviksriram/3d-camera-system" target="_blank" class="grid-item">
+                        <img src="./media/3d-camera.jpg" alt="3D Camera System">
+                        <h3 class="description-text">3D Camera System</h3>
+                    </a>
+                </div>
             </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About me</h1>
-                <p>sample text</p>
-
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
-                    <p class="tab-links" onclick="openTab('experience')">Experience</p>
-                    <p class="tab-links " onclick="openTab('education')">Education</p>
-                </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Skill</span><br>list</li>
-                        <li><span>Skill</span><br>list</li>
-                        <li><span>Skill</span><br>list</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>Experience</span><br>list</li>
-                        <li><span>Experience</span><br>list</li>
-                        <li><span>Experience</span><br>list</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>Education</span><br>list</li>
-                        <li><span>Education</span><br>list</li>
-                        <li><span>Education</span><br>list</li>
-                    </ul>
+            <div class="tab-pane" id="personal-projects">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="./media/ucsd-grad.jpg" alt="Graduation">
+                        <p>Graduated with B.S. in Computer Science from UCSD</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./media/ml-model.jpg" alt="ML Model">
+                        <p>97% accuracy Pokémon card classifier</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./media/ucsd-grad.jpg" alt="Graduation">
+                        <p>Graduated with B.S. in Computer Science from UCSD</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./media/ml-model.jpg" alt="ML Model">
+                        <p>97% accuracy Pokémon card classifier</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./media/ucsd-grad.jpg" alt="Graduation">
+                        <p>Graduated with B.S. in Computer Science from UCSD</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./media/ml-model.jpg" alt="ML Model">
+                        <p>97% accuracy Pokémon card classifier</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- ---------services----------- -->
+    <script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    const headerLinks = document.querySelectorAll('nav a[href^="#"]'); // header links
 
+    function activateTab(tabId) {
+        // Activate the correct tab button
+        tabButtons.forEach(btn => {
+            if (btn.dataset.tab.toLowerCase() === tabId.toLowerCase()) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
 
-
-<script>
-
-    var tabLinks = document.getElementsByClassName("tab-links");
-    var tabContents = document.getElementsByClassName("tab-contents")
-    function openTab(tabName) {
-        for(tabLink of tabLinks) {
-            tabLink.classList.remove("active-link");
-        }
-        for(tabContent of tabContents) {
-            tabContent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabName).classList.add("active-tab");
-        
+        // Activate the correct tab pane
+        tabPanes.forEach(pane => {
+            if (pane.id.toLowerCase() === tabId.toLowerCase()) {
+                pane.classList.add('active');
+            } else {
+                pane.classList.remove('active');
+            }
+        });
     }
 
-</script>
+    // Tab button clicks
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            activateTab(btn.dataset.tab);
+        });
+    });
+
+    // Header link clicks
+    headerLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href').substring(1); // remove the #
+            activateTab(targetId);
+
+            // Optional: smooth scroll to section
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            e.preventDefault(); // prevent default anchor jump
+        });
+    });
+    </script>
+
 
 </body>
 </html>
