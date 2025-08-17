@@ -66,11 +66,13 @@ nav ul li a:hover::after{
     margin-top: 20px;
 }
 
-.img-container img{
-    padding: 20px;
-    border-radius: 50px;
-    max-width: 100%;
-    height: auto;
+.img-container img {
+    width: 250px;        
+    height: 250px;
+    border-radius: 50%;  
+    object-fit: cover;
+    border: 4px solid #fff; 
+    box-shadow: 0 0 15px rgba(0,0,0,0.5); 
 }
 
 .img-container {
@@ -93,13 +95,19 @@ nav ul li a:hover::after{
     justify-content: center; 
     padding-left: 20px;
 }
-.text-container h1{
+
+.text-container h1 {
     font-size: 36px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-.text-container p{
-    font-size: 26px;
+.text-container p {
+    font-size: 22px;
+    font-style: italic;    /* make it look like a quote */
+    line-height: 1.6;
+    border-left: 4px solid #f62c12; /* vertical quote line */
+    padding-left: 15px;
+    color: #ddd;
 }
 
 .tabs-container {
@@ -157,11 +165,23 @@ nav ul li a:hover::after{
     cursor: pointer;
     background: #111;
 }
+.grid-item-off {
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0s ease;
+    cursor: pointer;
+    background: #111;
+}
 
 .grid-item img {
     width: 100%;
     height: auto;
     display: block;
+    max-height: 350px;
+    object-fit: contain;
+
 }
 
 #projects .grid-item:hover {
@@ -179,11 +199,33 @@ nav ul li a:hover::after{
     text-decoration: none;
 }
 
-.grid-item video {
+video {
     width: 100%;
     height: auto;
     display: block;
-    border-bottom: 1px solid #fff; /* optional, same style as images */
-    border-radius: 0; /* inherit border-radius from parent */
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
 }
 
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.tag {
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 999px; 
+    border: 2px solid transparent;
+    background: #080808; 
+    color: #fff;
+    font-weight: 500;
+    cursor: default;
+    background-image: linear-gradient(#080808, #080808), 
+                      linear-gradient(90deg, #b046f7, #f62c12);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
