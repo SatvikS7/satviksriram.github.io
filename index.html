@@ -22,8 +22,21 @@
     </div>
 
     <div class="about-container">
-        <div class="img-container">
-            <img src="./media/self_photo.jpg" alt="Satvik Sriram">
+        <div class="img-container" id="contact-card">
+            <img src="./media/self_photo.jpg" alt="Satvik Sriram" class="profile-img">
+            <p class="contact-text">Contact Me</p>
+
+            <div class="contact-container">
+                <a href="mailto:satviksriram7@gmail.com" target="_blank">
+                    <img src="./media/gmail_icon.png" alt="Gmail Icon" class="contact-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/satvik-sriram-3783611a5" target="_blank">
+                    <img src="./media/linkedin_icon.png" alt="LinkedIn Icon" class="contact-icon">
+                </a>
+                <a href="https://github.com/SatvikS7" target="_blank">
+                    <img src="./media/github_icon.png" alt="GitHub Icon" class="contact-icon">
+                </a>
+            </div>
         </div>
         <div class="text-container">
             <h1>About Me</h1>
@@ -361,52 +374,58 @@
     </div>
 
     <script>
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
-    const headerLinks = document.querySelectorAll('nav a[href^="#"]'); // header links
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        const headerLinks = document.querySelectorAll('nav a[href^="#"]'); // header links
 
-    function activateTab(tabId) {
-        // Activate the correct tab button
+        function activateTab(tabId) {
+            // Activate the correct tab button
+            tabButtons.forEach(btn => {
+                if (btn.dataset.tab.toLowerCase() === tabId.toLowerCase()) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Activate the correct tab pane
+            tabPanes.forEach(pane => {
+                if (pane.id.toLowerCase() === tabId.toLowerCase()) {
+                    pane.classList.add('active');
+                } else {
+                    pane.classList.remove('active');
+                }
+            });
+        }
+
+        // Tab button clicks
         tabButtons.forEach(btn => {
-            if (btn.dataset.tab.toLowerCase() === tabId.toLowerCase()) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
+            btn.addEventListener('click', () => {
+                activateTab(btn.dataset.tab);
+            });
         });
 
-        // Activate the correct tab pane
-        tabPanes.forEach(pane => {
-            if (pane.id.toLowerCase() === tabId.toLowerCase()) {
-                pane.classList.add('active');
-            } else {
-                pane.classList.remove('active');
-            }
+        // Header link clicks
+        headerLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = link.getAttribute('href').substring(1); // remove the #
+                activateTab(targetId);
+
+                // Optional: smooth scroll to section
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                e.preventDefault(); // prevent default anchor jump
+            });
         });
-    }
+    </script>
 
-    // Tab button clicks
-    tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            activateTab(btn.dataset.tab);
+    <script>
+        document.getElementById("contact-card").addEventListener("click", () => {
+            document.querySelector(".about-container").classList.toggle("show-contact");
         });
-    });
-
-    // Header link clicks
-    headerLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href').substring(1); // remove the #
-            activateTab(targetId);
-
-            // Optional: smooth scroll to section
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-
-            e.preventDefault(); // prevent default anchor jump
-        });
-    });
     </script>
 
 
